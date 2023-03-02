@@ -272,3 +272,53 @@ option{
     text-decoration: none;
     border:1px solid black;
 }
+
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    z-index:999;
+    /* background-color: black; */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup{
+    width:500px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius:10px;
+    padding:10px;
+    box-shadow: 5px 5px 5px rgb(141, 141, 141);
+}
+
+.popup-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.popup-header-text{
+    font-weight: bold;
+    font-size:1.5rem;
+}
+
+.popup-close-button{
+    background-color: white;
+    /* border:1px solid black; */
+    border-radius:50%;
+    height:30px;
+    width:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* outline:white; */
+    border:none;
+}

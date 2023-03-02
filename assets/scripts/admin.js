@@ -79,11 +79,12 @@ submitNewsButton.addEventListener("click", () =>{
         newsList = JSON.parse(localStorage.getItem("news"));
     console.log(newsList);
     let len = Object.keys(allNews).length;
+    console.log(allNews);
     for(let i=1;i<=len;i++){
         if(allNews["page"+i].length>=4){
             newsList["page"+i] = allNews["page"+i]
         }else{
-            alert(`Add atleast 4 news article in page ${i}`);
+            openPopup("Submit Failed",`Add atleast 4 news article in page ${i}`);
         }
     }
     localStorage.setItem("news", JSON.stringify(newsList));
@@ -234,3 +235,21 @@ document.addEventListener("DOMContentLoaded",()=>{
         addAccordionAction();
     })
 })
+
+const popupCloseButton = document.querySelector(".popup-close-button");
+popupCloseButton.addEventListener("click", ()=>{
+    console.log("Close Console");
+    const overlay = document.querySelector(".overlay");
+    overlay.classList.toggle("hidden");
+})
+
+const openPopup = (headerText, popupText) =>{
+    console.log("Opening Popup");
+    const popupHeaderText = document.querySelector(".popup-header-text")
+    const popupTextBox = document.querySelector(".popup-text")
+    popupHeaderText.innerHTML=headerText;
+    popupTextBox.innerHTML=popupText;
+    const overlay = document.querySelector(".overlay");
+    overlay.classList.toggle("hidden");
+    // if(!overlay.classList.contains("hidden"))
+}
